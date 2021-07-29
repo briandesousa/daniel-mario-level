@@ -9,11 +9,12 @@ const app = express();
 const reloadServer = livereload.createServer({
     exts: ['html', 'js', 'png']
 });
-reloadServer.watch(`${__dirname}/public`);
+reloadServer.watch(`${__dirname}/`);
 app.use(connectlivereload({
     port: 35729
 }));
 
 // serve static game files
-app.use(express.static('public'));
+app.use(express.static(__dirname + '/'));
+
 app.listen(3000, () => console.log(`Listening on port ${PORT}`));
