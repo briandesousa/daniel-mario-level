@@ -1,4 +1,5 @@
 exclude:
   - server.js
   - README.md
-  - package*
+  - package.json
+  - package-lock.json
